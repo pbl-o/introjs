@@ -26,10 +26,18 @@
                 valorTotal.innerHTML = precio * counter;
                 ">+</button>
 
-                <!-- botón sin filtro: a valores negativos -->
+                <!-- Intenté buscar soluciones para no usar funciones ni condiciones (if, operaciones ternarias): 
+                 
+                Encontré que los booleanos, usados en operaciones, se comportan como números (0 = false y 1 = true).
+                
+                Si se usa la expresión (counter > 0), en la medida que esta sea verdadera, se resta 1 al valor almacenado.
+                
+                Cuando la declaración deja de ser verdadera. La expresión se torna falsa y su valor será 0. Si al contador se le resta 0, el valor no cambia, por lo que el contador no dará valores negativos. 
+                
+                Solo se vuelve a restar 1 cuando el valor del contador vuelva a cumplir la condición, (ser mayor que 0), como al hacer click en el botón "<button>+</button>"" -->
                 <button
                 onclick="
-                counter -=1;
+                counter -= (counter > 0);
                 currentAmount.innerHTML = counter;
                 valorTotal.innerHTML = precio * counter;
                 ">-</button>
