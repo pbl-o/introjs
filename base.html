@@ -20,9 +20,19 @@
               <p>Cantidad:
                 <span class="cantidad">0</span>
                 <button 
-                >+</button>
+                onclick="
+                counter += 1;
+                currentAmount.innerHTML = counter;
+                valorTotal.innerHTML = precio * counter;
+                ">+</button>
+
+                <!-- botón sin filtro: a valores negativos -->
                 <button
-                >-</button>
+                onclick="
+                counter -=1;
+                currentAmount.innerHTML = counter;
+                valorTotal.innerHTML = precio * counter;
+                ">-</button>
               </p>
             </div>
 
